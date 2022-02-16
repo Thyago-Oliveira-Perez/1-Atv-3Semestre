@@ -1,5 +1,5 @@
 public enum StatusAgendamento {
 
-    ABERTO, PENDENTE, RECUSADO, CONFIRMADO, CANCELADO
+    Aprovado, Pendente, Recusado, Cancelado, Compareceu, NaoCompareceu
 
 }
