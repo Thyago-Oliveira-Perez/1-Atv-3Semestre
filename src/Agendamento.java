@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class Consulta {
+public class Agendamento {
 
     private Paciente paciente;
     private Secretaria secretaria;
@@ -13,10 +13,10 @@ public class Consulta {
     private String Observacao;
     private Boolean encaixe;
 
-    public Consulta() {
+    public Agendamento() {
     }
 
-    public Consulta(Paciente paciente, Secretaria secretaria, Medico medico, StatusAgendamento statusAgendamento, Date dataAbertura, Date dataConfirmacao, Date dataCancelamento, Date dataRecusado, String observacao, Boolean encaixe) {
+    public Agendamento(Paciente paciente, Secretaria secretaria, Medico medico, StatusAgendamento statusAgendamento, Date dataAbertura, Date dataConfirmacao, Date dataCancelamento, Date dataRecusado, String observacao, Boolean encaixe) {
         this.paciente = paciente;
         this.secretaria = secretaria;
         this.medico = medico;
