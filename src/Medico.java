@@ -1,27 +1,26 @@
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Medico extends Pessoa{
 
-    private String especialidade;
+    private Especialidade especialidade;
     private String crm;
-    private int cargaHoraria;
-    private List<AgendaDeHorarios> agendaDeHorarios;
+    private BigDecimal porcentParticipacao;
 
     public Medico() {
     }
 
-    public Medico(String especialidade, String crm, int cargaHoraria, List<AgendaDeHorarios> agendaDeHorarios) {
+    public Medico(Especialidade especialidade, String crm, BigDecimal porcentParticipacao) {
         this.especialidade = especialidade;
         this.crm = crm;
-        this.cargaHoraria = cargaHoraria;
-        this.agendaDeHorarios = agendaDeHorarios;
+        this.porcentParticipacao = porcentParticipacao;
     }
 
-    public String getEspecialidade() {
+    public Especialidade getEspecialidade() {
         return especialidade;
     }
 
-    public void setEspecialidade(String especialidade) {
+    public void setEspecialidade(Especialidade especialidade) {
         this.especialidade = especialidade;
     }
 
@@ -33,29 +32,11 @@ public class Medico extends Pessoa{
         this.crm = crm;
     }
 
-    public int getCargaHoraria() {
-        return cargaHoraria;
+    public BigDecimal getPorcentParticipacao() {
+        return porcentParticipacao;
     }
 
-    public void setCargaHoraria(int cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
-    }
-
-    public List<AgendaDeHorarios> getAgendaDeHorarios() {
-        return agendaDeHorarios;
-    }
-
-    public void setAgendaDeHorarios(List<AgendaDeHorarios> agendaDeHorarios) {
-        this.agendaDeHorarios = agendaDeHorarios;
-    }
-
-    @Override
-    public String toString() {
-        return "Medico{" +
-                "especialidade='" + especialidade + '\'' +
-                ", crm='" + crm + '\'' +
-                ", cargaHoraria=" + cargaHoraria +
-                ", agendaDeHorarios=" + agendaDeHorarios +
-                '}';
+    public void setPorcentParticipacao(BigDecimal porcentParticipacao) {
+        this.porcentParticipacao = porcentParticipacao;
     }
 }

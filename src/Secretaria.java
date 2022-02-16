@@ -1,37 +1,51 @@
-public class Secretaria extends Pessoa{
+import java.math.BigDecimal;
+import java.util.Date;
 
-    private String ctps;
-    private int cargaHoraria;
+public class Secretaria extends Pessoa {
+
+    private String pis;
+    private Date dataContratacao;
+    private BigDecimal salario;
 
     public Secretaria() {
     }
 
-    public Secretaria(String ctps, int cargaHoraria) {
-        this.ctps = ctps;
-        this.cargaHoraria = cargaHoraria;
+    public Secretaria(String pis, Date dataContratacao, BigDecimal salario) {
+        this.pis = pis;
+        this.dataContratacao = dataContratacao;
+        this.salario = salario;
     }
 
-    public String getCtps() {
-        return ctps;
+    public String getPis() {
+        return pis;
     }
 
-    public void setCtps(String ctps) {
-        this.ctps = ctps;
+    public void setPis(String pis) {
+        this.pis = pis;
     }
 
-    public int getCargaHoraria() {
-        return cargaHoraria;
+    public Date getDataContratacao() {
+        return dataContratacao;
     }
 
-    public void setCargaHoraria(int cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
+    public void setDataContratacao(Date dataContratacao) {
+        this.dataContratacao = dataContratacao;
+    }
+
+    public BigDecimal getSalario() {
+        return salario;
+    }
+
+    public void setSalario(BigDecimal salario) {
+        this.salario = salario;
     }
 
     @Override
     public String toString() {
         return "Secretaria{" +
-                "ctps='" + ctps + '\'' +
-                ", cargaHoraria=" + cargaHoraria +
+                "pis='" + pis + '\'' +
+                ", dataContratacao=" + dataContratacao +
+                ", salario=" + salario +
                 '}';
     }
 }

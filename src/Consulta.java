@@ -2,29 +2,31 @@ import java.util.Date;
 
 public class Consulta {
 
-    private Date data;
     private Paciente paciente;
+    private Secretaria secretaria;
     private Medico medico;
-    private Boolean ativo;
+    private StatusAgendamento statusAgendamento;
+    private Date dataAbertura;
+    private Date dataConfirmacao;
+    private Date dataCancelamento;
+    private Date dataRecusado;
+    private String Observacao;
     private Boolean encaixe;
 
     public Consulta() {
     }
 
-    public Consulta(Date data, Paciente paciente, Medico medico, Boolean ativo, Boolean encaixe) {
-        this.data = data;
+    public Consulta(Paciente paciente, Secretaria secretaria, Medico medico, StatusAgendamento statusAgendamento, Date dataAbertura, Date dataConfirmacao, Date dataCancelamento, Date dataRecusado, String observacao, Boolean encaixe) {
         this.paciente = paciente;
+        this.secretaria = secretaria;
         this.medico = medico;
-        this.ativo = ativo;
+        this.statusAgendamento = statusAgendamento;
+        this.dataAbertura = dataAbertura;
+        this.dataConfirmacao = dataConfirmacao;
+        this.dataCancelamento = dataCancelamento;
+        this.dataRecusado = dataRecusado;
+        Observacao = observacao;
         this.encaixe = encaixe;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
     }
 
     public Paciente getPaciente() {
@@ -35,6 +37,14 @@ public class Consulta {
         this.paciente = paciente;
     }
 
+    public Secretaria getSecretaria() {
+        return secretaria;
+    }
+
+    public void setSecretaria(Secretaria secretaria) {
+        this.secretaria = secretaria;
+    }
+
     public Medico getMedico() {
         return medico;
     }
@@ -43,12 +53,52 @@ public class Consulta {
         this.medico = medico;
     }
 
-    public Boolean getAtivo() {
-        return ativo;
+    public StatusAgendamento getStatusAgendamento() {
+        return statusAgendamento;
     }
 
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
+    public void setStatusAgendamento(StatusAgendamento statusAgendamento) {
+        this.statusAgendamento = statusAgendamento;
+    }
+
+    public Date getDataAbertura() {
+        return dataAbertura;
+    }
+
+    public void setDataAbertura(Date dataAbertura) {
+        this.dataAbertura = dataAbertura;
+    }
+
+    public Date getDataConfirmacao() {
+        return dataConfirmacao;
+    }
+
+    public void setDataConfirmacao(Date dataConfirmacao) {
+        this.dataConfirmacao = dataConfirmacao;
+    }
+
+    public Date getDataCancelamento() {
+        return dataCancelamento;
+    }
+
+    public void setDataCancelamento(Date dataCancelamento) {
+        this.dataCancelamento = dataCancelamento;
+    }
+
+    public Date getDataRecusado() {
+        return dataRecusado;
+    }
+
+    public void setDataRecusado(Date dataRecusado) {
+        this.dataRecusado = dataRecusado;
+    }
+
+    public String getObservacao() {
+        return Observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        Observacao = observacao;
     }
 
     public Boolean getEncaixe() {
@@ -62,10 +112,15 @@ public class Consulta {
     @Override
     public String toString() {
         return "Consulta{" +
-                "data=" + data +
-                ", paciente=" + paciente +
+                "paciente=" + paciente +
+                ", secretaria=" + secretaria +
                 ", medico=" + medico +
-                ", ativo=" + ativo +
+                ", statusAgendamento=" + statusAgendamento +
+                ", dataAbertura=" + dataAbertura +
+                ", dataConfirmacao=" + dataConfirmacao +
+                ", dataCancelamento=" + dataCancelamento +
+                ", dataRecusado=" + dataRecusado +
+                ", Observacao='" + Observacao + '\'' +
                 ", encaixe=" + encaixe +
                 '}';
     }

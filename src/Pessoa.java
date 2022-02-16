@@ -1,8 +1,8 @@
-abstract class Pessoa {
+abstract class Pessoa extends AbstractEntity {
 
     private String nome;
     private int idade;
-    private String sexo;
+    private Sexo sexo;
     private String rg;
     private String cpf;
     private String pais;
@@ -31,11 +31,11 @@ abstract class Pessoa {
         this.idade = idade;
     }
 
-    public String getSexo() {
+    public Sexo getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
 
