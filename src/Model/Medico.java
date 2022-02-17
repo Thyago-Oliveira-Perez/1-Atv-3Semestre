@@ -1,5 +1,6 @@
+package Model;
+
 import java.math.BigDecimal;
-import java.util.List;
 
 public class Medico extends Pessoa{
 

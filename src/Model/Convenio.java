@@ -1,3 +1,5 @@
+package Model;
+
 import java.math.BigDecimal;
 
 public class Convenio {
@@ -31,7 +33,7 @@ public class Convenio {
 
     @Override
     public String toString() {
-        return "Convenio{" +
+        return "Model.Convenio{" +
                 "nomeConvenio='" + nomeConvenio + '\'' +
                 ", valorConvenio=" + valorConvenio +
                 '}';

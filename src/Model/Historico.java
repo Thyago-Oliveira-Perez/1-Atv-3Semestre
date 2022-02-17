@@ -1,3 +1,5 @@
+package Model;
+
 public class Historico {
 
     private Agendamento agendamento;
@@ -59,7 +61,7 @@ public class Historico {
 
     @Override
     public String toString() {
-        return "Historico{" +
+        return "Model.Historico{" +
                 "agendamento=" + agendamento +
                 ", paciente=" + paciente +
                 ", secretaria=" + secretaria +

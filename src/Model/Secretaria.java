@@ -1,3 +1,5 @@
+package Model;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -42,7 +44,7 @@ public class Secretaria extends Pessoa {
 
     @Override
     public String toString() {
-        return "Secretaria{" +
+        return "Model.Secretaria{" +
                 "pis='" + pis + '\'' +
                 ", dataContratacao=" + dataContratacao +
                 ", salario=" + salario +

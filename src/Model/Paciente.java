@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.Date;
 
 public class Paciente extends Pessoa {
@@ -51,7 +53,7 @@ public class Paciente extends Pessoa {
 
     @Override
     public String toString() {
-        return "Paciente{" +
+        return "Model.Paciente{" +
                 "convenio=" + convenio +
                 ", tipoAtendimento=" + tipoAtendimento +
                 ", dataVencimentoConv=" + dataVencimentoConv +

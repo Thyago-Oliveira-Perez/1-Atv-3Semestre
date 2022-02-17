@@ -1,3 +1,5 @@
+package Model;
+
 public class Especialidade {
 
     private String nomeEspecialidade;
@@ -19,7 +21,7 @@ public class Especialidade {
 
     @Override
     public String toString() {
-        return "Especialidade{" +
+        return "Model.Especialidade{" +
                 "nomeEspecialidade='" + nomeEspecialidade + '\'' +
                 '}';
     }

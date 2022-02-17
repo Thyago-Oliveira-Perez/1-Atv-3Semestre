@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.Date;
 
 abstract class AbstractEntity {
@@ -41,7 +43,7 @@ abstract class AbstractEntity {
 
     @Override
     public String toString() {
-        return "AbstractEntity{" +
+        return "Model.AbstractEntity{" +
                 "id=" + id +
                 ", cadastro=" + cadastro +
                 ", atualizado=" + atualizado +

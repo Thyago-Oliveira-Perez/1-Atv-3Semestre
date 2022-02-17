@@ -1,3 +1,5 @@
+package Model;
+
 abstract class Pessoa extends AbstractEntity {
 
     private String nome;
