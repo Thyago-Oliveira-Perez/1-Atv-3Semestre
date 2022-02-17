@@ -1,6 +1,4 @@
-import Model.Paciente;
-
-import java.util.prefs.PreferenceChangeEvent;
+import model.Paciente;
 
 public class Main {
 
