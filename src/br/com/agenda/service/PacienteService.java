@@ -13,12 +13,12 @@ public class PacienteService {
         pacienteDao.insertPaciente(paciente);
     }
 
-    public void updatePaciente(Paciente paciente){
-        pacienteDao.updatePaciente(paciente);
+    public void updatePaciente(Paciente paciente, int id){
+        pacienteDao.updatePaciente(paciente, id);
     }
 
-    public void updateStatusPaciente(Long id){
-        pacienteDao.updateStatusPaciente(id);
+    public void updateStatusPaciente(Boolean status, Long id){
+        pacienteDao.updateStatusPaciente(status, id);
     }
 
     public List<Paciente> findAllPaciente(){

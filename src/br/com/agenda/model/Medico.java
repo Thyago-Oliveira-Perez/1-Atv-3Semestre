@@ -7,6 +7,7 @@ public class Medico extends Pessoa{
     private Especialidade especialidade;
     private String crm;
     private BigDecimal porcentParticipacao;
+    private String consultorio;
 
     public Medico() {
     }
@@ -39,5 +40,13 @@ public class Medico extends Pessoa{
 
     public void setPorcentParticipacao(BigDecimal porcentParticipacao) {
         this.porcentParticipacao = porcentParticipacao;
+    }
+
+    public String getConsultorio() {
+        return consultorio;
+    }
+
+    public void setConsultorio(String consultorio) {
+        this.consultorio = consultorio;
     }
 }

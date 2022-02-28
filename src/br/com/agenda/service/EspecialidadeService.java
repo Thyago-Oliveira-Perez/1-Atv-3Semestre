@@ -13,12 +13,12 @@ public class EspecialidadeService {
         especialidadeDao.insertEspecialidade(especialidade);
     }
 
-    public void updateEspecialidade(Especialidade especialidade){
-        especialidadeDao.updateEspecialidade(especialidade);
+    public void updateEspecialidade(Especialidade especialidade, Long id){
+        especialidadeDao.updateEspecialidade(especialidade, id);
     }
 
-    public void updateStatusEspecialidade(Long id){
-        especialidadeDao.updateStatusEspecialidade(id);
+    public void updateStatusEspecialidade(Boolean status, Long id){
+        especialidadeDao.updateStatusEspecialidade(status, id);
     }
 
     public List<Especialidade> findAllEspecialidade(){

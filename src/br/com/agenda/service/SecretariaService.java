@@ -13,12 +13,12 @@ public class SecretariaService {
         secretariaDao.insertSecretaria(secretaria);
     }
 
-    public void updateSecretaria(Secretaria secretaria){
-        secretariaDao.updateSecretaria(secretaria);
+    public void updateSecretaria(Secretaria secretaria, Long id){
+        secretariaDao.updateSecretaria(secretaria, id);
     }
 
-    public void updateStatusSecretaria(Long id){
-        secretariaDao.updateStatusSecretaria(id);
+    public void updateStatusSecretaria(Boolean status, Long id){
+        secretariaDao.updateStatusSecretaria(status, id);
     }
 
     public List<Secretaria> findAllSecretaria(){

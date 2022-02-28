@@ -13,12 +13,12 @@ public class ConvenioService {
         convenioDao.insertConvenio(convenio);
     }
 
-    public void updateConvenio(Convenio convenio){
-        convenioDao.updateConvenio(convenio);
+    public void updateConvenio(Convenio convenio, Long id){
+        convenioDao.updateConvenio(convenio, id);
     }
 
-    public void updateStatusConvenio(Long id){
-        convenioDao.updateStatusConvenio(id);
+    public void updateStatusConvenio(Boolean status, Long id){
+        convenioDao.updateStatusConvenio(status, id);
     }
 
     public List<Convenio> findAllConvenio(){

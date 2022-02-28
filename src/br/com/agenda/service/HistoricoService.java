@@ -13,14 +13,6 @@ public class HistoricoService {
         historicoDao.insertHistorico(historico);
     }
 
-    public void updateHistorico(Historico historico){
-        historicoDao.updateHistorico(historico);
-    }
-
-    public void updateStatusHistorico(Long id){
-        historicoDao.updateStatusHistorico(id);
-    }
-
     public List<Historico> findAllHistorico(){
         return historicoDao.findAllHistorico();
     }

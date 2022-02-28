@@ -2,12 +2,11 @@ package br.com.agenda.model;
 
 import java.util.Date;
 
-public class Agendamento {
+public class Agendamento extends AbstractEntity{
 
     private Paciente paciente;
-    private Secretaria secretaria;
     private Medico medico;
-    private StatusAgendamento statusAgendamento;
+    private String statusAgendamento;
     private Date dataAbertura;
     private Date dataConfirmacao;
     private Date dataCancelamento;
@@ -18,9 +17,8 @@ public class Agendamento {
     public Agendamento() {
     }
 
-    public Agendamento(Paciente paciente, Secretaria secretaria, Medico medico, StatusAgendamento statusAgendamento, Date dataAbertura, Date dataConfirmacao, Date dataCancelamento, Date dataRecusado, String observacao, Boolean encaixe) {
+    public Agendamento(Paciente paciente, Medico medico, String statusAgendamento, Date dataAbertura, Date dataConfirmacao, Date dataCancelamento, Date dataRecusado, String observacao, Boolean encaixe) {
         this.paciente = paciente;
-        this.secretaria = secretaria;
         this.medico = medico;
         this.statusAgendamento = statusAgendamento;
         this.dataAbertura = dataAbertura;
@@ -39,14 +37,6 @@ public class Agendamento {
         this.paciente = paciente;
     }
 
-    public Secretaria getSecretaria() {
-        return secretaria;
-    }
-
-    public void setSecretaria(Secretaria secretaria) {
-        this.secretaria = secretaria;
-    }
-
     public Medico getMedico() {
         return medico;
     }
@@ -55,11 +45,11 @@ public class Agendamento {
         this.medico = medico;
     }
 
-    public StatusAgendamento getStatusAgendamento() {
+    public String getStatusAgendamento() {
         return statusAgendamento;
     }
 
-    public void setStatusAgendamento(StatusAgendamento statusAgendamento) {
+    public void setStatusAgendamento(String statusAgendamento) {
         this.statusAgendamento = statusAgendamento;
     }
 
@@ -115,7 +105,6 @@ public class Agendamento {
     public String toString() {
         return "Consulta{" +
                 "paciente=" + paciente +
-                ", secretaria=" + secretaria +
                 ", medico=" + medico +
                 ", statusAgendamento=" + statusAgendamento +
                 ", dataAbertura=" + dataAbertura +

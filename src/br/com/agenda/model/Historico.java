@@ -1,17 +1,17 @@
 package br.com.agenda.model;
 
-public class Historico {
+public class Historico extends AbstractEntity{
 
     private Agendamento agendamento;
     private Paciente paciente;
     private Secretaria secretaria;
     private String Observacao;
-    private StatusAgendamento statusAgendamento;
+    private String statusAgendamento;
 
     public Historico() {
     }
 
-    public Historico(Agendamento agendamento, Paciente paciente, Secretaria secretaria, String observacao, StatusAgendamento statusAgendamento) {
+    public Historico(Agendamento agendamento, Paciente paciente, Secretaria secretaria, String observacao, String statusAgendamento) {
         this.agendamento = agendamento;
         this.paciente = paciente;
         this.secretaria = secretaria;
@@ -51,11 +51,11 @@ public class Historico {
         Observacao = observacao;
     }
 
-    public StatusAgendamento getStatusAgendamento() {
+    public String getStatusAgendamento() {
         return statusAgendamento;
     }
 
-    public void setStatusAgendamento(StatusAgendamento statusAgendamento) {
+    public void setStatusAgendamento(String statusAgendamento) {
         this.statusAgendamento = statusAgendamento;
     }
 

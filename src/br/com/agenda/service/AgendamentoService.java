@@ -13,12 +13,12 @@ public class AgendamentoService {
         agendamentoDao.insertAgendamento(agendamento);
     }
 
-    public void updateAgendamento(Agendamento agendamento){
-        agendamentoDao.updateAgendamento(agendamento);
+    public void updateAgendamento(Agendamento agendamento, Long id){
+        agendamentoDao.updateAgendamento(agendamento, id);
     }
 
-    public void updateStatusAgendamento(Long id){
-        agendamentoDao.updateStatusAgendamento(id);
+    public void updateStatusAgendamento(String status, Long id){
+        agendamentoDao.updateStatusAgendamento(status, id);
     }
 
     public List<Agendamento> findAllAgendamento(){

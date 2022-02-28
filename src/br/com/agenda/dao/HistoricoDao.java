@@ -3,12 +3,15 @@ package br.com.agenda.dao;
 import br.com.agenda.factory.ConnectionFactory;
 import br.com.agenda.model.Historico;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HistoricoDao {
+
+    AgendamentoDao agendamentoDao = new AgendamentoDao();
+    PacienteDao pacienteDao = new PacienteDao();
+    SecretariaDao secretariaDao = new SecretariaDao();
 
     private static Connection connection;
 
@@ -34,7 +37,7 @@ public class HistoricoDao {
 
     public void createTable(){
 
-        String sqlCreate = "create table historico(\n" +
+        String sqlCreate = "create table if not exists historico(\n" +
                 "\tid bigint primary key default nextval('seq_historico_id'),\n" +
                 "\tcadastrado timestamp not null,\n" +
                 "\tatualizado timestamp,\n" +
@@ -59,18 +62,71 @@ public class HistoricoDao {
         }
     }
 
-    public void insertHistorico(Historico historico){}
+    public void insertHistorico(Historico historico){
+        String sqlInsert = "insert into historico (cadastro, id_agenda, observacao, " +
+                "status_agendamento, id_paciente, id_secretaria) values (now(),?,?,?,?,?);";
 
-    public void updateHistorico(Historico historico){}
-
-    public void updateStatusHistorico(Long id){}
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlInsert);
+            preparedStatement.setLong(1, historico.getAgendamento().getId());
+            preparedStatement.setString(2, historico.getObservacao());
+            preparedStatement.setString(3, historico.getStatusAgendamento());
+            preparedStatement.setLong(4, historico.getPaciente().getId());
+            preparedStatement.setLong(5, historico.getSecretaria().getId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public List<Historico> findAllHistorico(){
-        return null;
+
+        List<Historico> retornoBanco = new ArrayList<>();
+
+        String sqlSelect = "select * from historico;";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlSelect);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                Historico historico = new Historico();
+                historico.setAgendamento(agendamentoDao.findByIdAgendamento(resultSet.getLong("id_agenda")));
+                historico.setPaciente(pacienteDao.findByIdPaciente(resultSet.getLong("id_paciente")));
+                historico.setSecretaria(secretariaDao.findByIdSecretaria(resultSet.getLong("id_secretaria")));
+                historico.setObservacao(resultSet.getString("observacao"));
+                historico.setStatusAgendamento(resultSet.getString("status_agendamento"));
+                historico.setCadastro(resultSet.getDate("cadastro"));
+                historico.setAtualizado(resultSet.getDate("atualizado"));
+                historico.setExcluido(resultSet.getDate("excluido"));
+                retornoBanco.add(historico);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return retornoBanco;
     }
 
     public Historico findByIdHistorico(Long id){
-        return null;
+        Historico historico = new Historico();
+        String sqlSelect = "select * from historico;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlSelect);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+
+                historico.setAgendamento(agendamentoDao.findByIdAgendamento(resultSet.getLong("id_agenda")));
+                historico.setPaciente(pacienteDao.findByIdPaciente(resultSet.getLong("id_paciente")));
+                historico.setSecretaria(secretariaDao.findByIdSecretaria(resultSet.getLong("id_secretaria")));
+                historico.setObservacao(resultSet.getString("observacao"));
+                historico.setStatusAgendamento(resultSet.getString("status_agendamento"));
+                historico.setCadastro(resultSet.getDate("cadastro"));
+                historico.setAtualizado(resultSet.getDate("atualizado"));
+                historico.setExcluido(resultSet.getDate("excluido"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return historico;
     }
 
 }

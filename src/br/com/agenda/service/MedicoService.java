@@ -13,12 +13,12 @@ public class MedicoService {
         medicoDao.insertMedico(medico);
     }
 
-    public void updateMedico(Medico medico){
-        medicoDao.updateMedico(medico);
+    public void updateMedico(Medico medico, Long id){
+        medicoDao.updateMedico(medico, id);
     }
 
-    public void updateStatusMedico(Long id){
-        medicoDao.updateStatusMedico(id);
+    public void updateStatusMedico(Boolean status, Long id){
+        medicoDao.updateStatusMedico(status, id);
     }
 
     public List<Medico> findAllMedico(){

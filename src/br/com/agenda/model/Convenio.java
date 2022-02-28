@@ -2,7 +2,7 @@ package br.com.agenda.model;
 
 import java.math.BigDecimal;
 
-public class Convenio {
+public class Convenio extends AbstractEntity{
 
     private String nomeConvenio;
     private BigDecimal valorConvenio;

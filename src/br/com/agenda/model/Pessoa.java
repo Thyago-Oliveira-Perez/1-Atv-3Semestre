@@ -4,16 +4,15 @@ abstract class Pessoa extends AbstractEntity {
 
     private String nome;
     private int idade;
-    private Sexo sexo;
+    private String sexo;
     private String rg;
     private String cpf;
-    private String pais;
-    private String estado;
-    private String cidade;
+    private String cep;
     private String rua;
     private String login;
     private String senha;
     private String telefone;
+    private String nacionalidade;
     private String email;
     private Boolean ativo;
 
@@ -33,11 +32,11 @@ abstract class Pessoa extends AbstractEntity {
         this.idade = idade;
     }
 
-    public Sexo getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(Sexo sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -57,28 +56,12 @@ abstract class Pessoa extends AbstractEntity {
         this.cpf = cpf;
     }
 
-    public String getPais() {
-        return pais;
+    public String getCep() {
+        return cep;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getRua() {
@@ -113,6 +96,14 @@ abstract class Pessoa extends AbstractEntity {
         this.telefone = telefone;
     }
 
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -129,4 +120,21 @@ abstract class Pessoa extends AbstractEntity {
         this.ativo = ativo;
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa: " +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", sexo='" + sexo + '\'' +
+                ", rg='" + rg + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", cep='" + cep + '\'' +
+                ", rua='" + rua + '\'' +
+                ", login='" + login + '\'' +
+                ", senha='" + senha + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", nacionalidade='" + nacionalidade + '\'' +
+                ", email='" + email + '\'' +
+                ", ativo=" + ativo;
+    }
 }
